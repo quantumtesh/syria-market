@@ -5,6 +5,22 @@
     <title>سوق سوريا - بيع وشراء المستعمل</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- أضف مكتبة Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+
+<!-- التهيئة -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBq...",
+    authDomain: "syria-market.firebaseapp.com",
+    projectId: "syria-market-b7b1e",
+    storageBucket: "syria-market.appspot.com",
+    messagingSenderId: "841251204461",
+    appId: "AIzaSyDaWVTjnSumAvBEoUxsNngMJPk_1-GjTfg"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
 <body>
     <header>
         <h1>مرحباً في سوق سوريا 🇸🇾</h1>
@@ -13,6 +29,13 @@
             <a href="#إعلانات">الإعلانات</a>
             <a href="#اتصل">اتصل بنا</a>
         </nav>
+        <section id="تسجيل" class="auth-form">
+            <h2>تسجيل حساب جديد</h2>
+            <input type="email" id="email" placeholder="البريد الإلكتروني">
+            <input type="password" id="password" placeholder="كلمة المرور">
+            <button onclick="signUp()">إنشاء حساب</button>
+            <p>لديك حساب؟ <a href="#تسجيل" onclick="showLogin()">سجل دخول</a></p>
+        </section>
     </header>
 
     <section class="ads">
